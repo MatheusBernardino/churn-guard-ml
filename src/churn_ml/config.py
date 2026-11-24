@@ -6,6 +6,10 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 DATA_DIR = PROJECT_ROOT / "data"
 RAW_DATA_PATH = DATA_DIR / "raw" / "telco_churn_raw.csv"
+RAW_DATA_URL = (
+    "https://raw.githubusercontent.com/IBM/telco-customer-churn-on-icp4d/"
+    "master/data/Telco-Customer-Churn.csv"
+)
 PROCESSED_DATA_PATH = DATA_DIR / "processed" / "telco_clean.parquet"
 
 MODELS_DIR = PROJECT_ROOT / "models"
