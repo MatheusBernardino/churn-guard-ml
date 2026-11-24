@@ -1,0 +1,43 @@
+[project]
+name = "churn-guard-ml"
+version = "0.1.0"
+description = "ChurnGuard: Pipeline Ponta a Ponta para Predição de Evasão de Clientes - CK0444 UFC"
+readme = "README.md"
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "pandas>=2.2.0,<3.0.0",
+    "pyarrow>=17.0.0",
+    "scikit-learn>=1.5.0,<1.7.0",
+    "imbalanced-learn>=0.12.0",
+    "joblib>=1.4.0",
+    "matplotlib>=3.9.0",
+    "seaborn>=0.13.0",
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.30.0",
+    "pydantic>=2.8.0",
+    "requests>=2.32.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3.0",
+    "httpx>=0.27.0",
+    "ruff>=0.6.0",
+    "ipykernel>=6.29.0",
+    "dvc>=3.50.0,<4.0.0",
+]
+
+[tool.poetry]
+packages = [{ include = "churn_ml", from = "src" }]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

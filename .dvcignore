@@ -1,0 +1,8 @@
+# Padrões ignorados pelo DVC
+.git/
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+*.log
